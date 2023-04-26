@@ -34,7 +34,7 @@ export const getStaticPaths = async () => {
   return {
     //每個{}就是一個meetupId
     //通常是fetch後端data
-    fallback: false, //表示paths中是否包含所有參數(false)或只是一部份
+    fallback: "blocking", //表示paths中是否包含所有參數(false)或只是一部份
     paths: meetups.map((meetup) => ({
       params: {
         meetupId: meetup._id.toString(),
